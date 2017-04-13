@@ -9,9 +9,14 @@
 
 <body ng-app="airport">
 
-<section class="airport-container" ng-controller="AirportController as airport">
-
+<section ng-controller="AirportController as airport">
+  <div ng-repeat="plane in airport.planeData">
+    <div>
+      <p> {{plane.long}} </p>
+    </div>
+  </div>
 </section>
+
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>

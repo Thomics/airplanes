@@ -15,6 +15,9 @@
     vm.planeData;
     vm.planes;
 
+
+    vm.lat = 0;
+
     activate();
 
     function activate() {
@@ -42,25 +45,33 @@
 
 
     function displayPlanes(data) {
-      var states = [];
+      var displayedPlanes = [];
+
 
       for(var i = 0; i < data.states.length; i++) {
 
-        //if (data.states[i][2] === 'United States' ) {
-        //  states.push(data.states[i]);
-        //}
-
-
         if ( (data.states[i][6] > 47.5 && data.states[i][6] < 47.82) && (data.states[i][5] < -122 && data.states[i][5] > -122.55) ) {
-          states.push(data.states[i]);
+          var planes = {
+            lat: data.states[i][5],
+            long: data.states[i][6],
+            country: data.states[i][2],
+            callsign: data.states[i][1],
+            velocity: data.states[i][9],
+            altitude: data.states[i][7],
+            verticalRate: data.states[i][11]
+          };
+
+          displayedPlanes.push(planes);
+
 
         }
-        //[6] lat 47.5/47.82
-        //[5]long -122.5/122.2
 
       }
 
-      console.log(states);
+      vm.lat = 100;
+
+      console.log(displayedPlanes);
+      vm.planeData = displayedPlanes;
 
     }
 
