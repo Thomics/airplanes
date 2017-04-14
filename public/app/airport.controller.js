@@ -51,14 +51,19 @@
       for(var i = 0; i < data.states.length; i++) {
 
         if ( (data.states[i][6] > 47.5 && data.states[i][6] < 47.82) && (data.states[i][5] < -122 && data.states[i][5] > -122.55) ) {
+
+          var mph = Math.floor(Number(data.states[i][9]) / 0.44704);
+          console.log(mph);
+
           var planes = {
             lat: data.states[i][5],
             long: data.states[i][6],
             country: data.states[i][2],
             callsign: data.states[i][1],
-            velocity: data.states[i][9],
+            velocity: mph,
             altitude: data.states[i][7],
-            verticalRate: data.states[i][11]
+            verticalRate: data.states[i][11],
+            icao24: data.states[i][0]
           };
 
           displayedPlanes.push(planes);
@@ -67,6 +72,8 @@
         }
 
       }
+
+      //Find plane data https://planefinder.net/
 
       vm.lat = 100;
 

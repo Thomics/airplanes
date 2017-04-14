@@ -11,14 +11,18 @@
 
 <section class="container" ng-controller="AirportController as airport">
   <div class="plane-container" ng-repeat="plane in airport.planeData">
-    <div>
+    <div class="info-container">
       <p class="callsign">{{plane.callsign}}</p>
       <br />
       <p class="country">{{plane.country}}</p>
-      <div class="lat-long-container">
-        <p class="latitude"><span class="lat-long-label">LAT:</span><br />{{plane.lat}} </p>
-        <p class="longitude"><span class="lat-long-label">LONG:</span><br />{{plane.long}} </p>
-      </div>
+      <br />
+      <p class="speed">MPH: {{plane.velocity}}</p>
+      <p class="speed">icao24: {{plane.icao24}}</p>
+
+    </div>
+    <div class="lat-long-container">
+      <p class="latitude"><span class="lat-long-label">LAT:</span><br />{{plane.lat}} </p>
+      <p class="longitude"><span class="lat-long-label">LONG:</span><br />{{plane.long}} </p>
     </div>
   </div>
 </section>

@@ -19,6 +19,12 @@ html, body {
   background: #f7e7e7;
 }
 
+.info-container {
+  width: calc(100% - 475px);
+  height: 500px;
+  float: left;
+}
+
 .callsign {
   font-size: 72px;
   display: inline;
@@ -32,16 +38,20 @@ html, body {
 }
 
 .lat-long-container {
-  width: auto;
-  float: right;
+  width: 475px;
+  float: left;
+  height: 500px;
 }
 
 .latitude, .longitude {
   font-size: 96px;
-  /*float: right;*/
   color: #555;
-  margin: 25px;
+  /*margin: 25px;*/
   clear: both;
+}
+
+.latitude {
+  margin: -17px 0 0 0;
 }
 
 .lat-long-label {
