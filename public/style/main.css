@@ -1,0 +1,51 @@
+html, body {
+  font-family: RobotoRegular, sans-serif;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background: #f1f5f6;
+}
+
+.plane-container {
+  width: 100%;
+  height: 500px;
+  background: #fafafa;
+  border-bottom: 1px solid #888;
+}
+
+.plane-container:nth-child(odd) {
+  background: #f7e7e7;
+}
+
+.callsign {
+  font-size: 72px;
+  display: inline;
+  color: #555;
+}
+
+.country {
+  font-size: 36px;
+  display: inline;
+  color: #555;
+}
+
+.lat-long-container {
+  width: auto;
+  float: right;
+}
+
+.latitude, .longitude {
+  font-size: 96px;
+  /*float: right;*/
+  color: #555;
+  margin: 25px;
+  clear: both;
+}
+
+.lat-long-label {
+  font-size: 39px;
+  font-weight: 300;
+}
+

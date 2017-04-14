@@ -9,10 +9,16 @@
 
 <body ng-app="airport">
 
-<section ng-controller="AirportController as airport">
-  <div ng-repeat="plane in airport.planeData">
+<section class="container" ng-controller="AirportController as airport">
+  <div class="plane-container" ng-repeat="plane in airport.planeData">
     <div>
-      <p> {{plane.long}} </p>
+      <p class="callsign">{{plane.callsign}}</p>
+      <br />
+      <p class="country">{{plane.country}}</p>
+      <div class="lat-long-container">
+        <p class="latitude"><span class="lat-long-label">LAT:</span><br />{{plane.lat}} </p>
+        <p class="longitude"><span class="lat-long-label">LONG:</span><br />{{plane.long}} </p>
+      </div>
     </div>
   </div>
 </section>
