@@ -53,7 +53,7 @@
         if ( (data.states[i][6] > 47.5 && data.states[i][6] < 47.82) && (data.states[i][5] < -122 && data.states[i][5] > -122.55) ) {
 
           var mph = Math.floor(Number(data.states[i][9]) / 0.44704);
-          console.log(mph);
+          var altitude = Math.floor(Number(data.states[i][7]) * 3.28084);
 
           var planes = {
             lat: data.states[i][5],
@@ -61,7 +61,7 @@
             country: data.states[i][2],
             callsign: data.states[i][1],
             velocity: mph,
-            altitude: data.states[i][7],
+            altitude: altitude,
             verticalRate: data.states[i][11],
             icao24: data.states[i][0]
           };
