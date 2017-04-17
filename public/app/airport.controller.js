@@ -22,10 +22,10 @@
 
     function activate() {
 
-      $interval(function() {
-        console.log('aip');
+      //$interval(function() {
+      //  console.log('aip');
         vm.getPlanes();
-      }, 5000);
+      //}, 5000);
 
     }
 
