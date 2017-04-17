@@ -5,14 +5,15 @@
     .module('airport')
     .controller('AirportController', AirportController);
 
-  AirportController.$inject = ['AirportService', '$interval'];
+  AirportController.$inject = ['AirportService', '$interval', '$http'];
 
-  function AirportController(AirportService, $interval) {
+  function AirportController(AirportService, $interval, $http) {
 
     var vm = this;
 
     vm.getPlanes = getPlanes;
     vm.planeData;
+    vm.getPlaneData = getPlaneData;
     vm.planes;
 
 
@@ -25,13 +26,13 @@
       //$interval(function() {
       //  console.log('aip');
         vm.getPlanes();
+        vm.getPlaneData();
       //}, 5000);
 
     }
 
 
     function getPlanes() {
-      console.log('in');
 
       AirportService.getPlanes()
         .success(function(data) {
@@ -45,6 +46,13 @@
           console.log(err);
         });
 
+    }
+
+
+    function getPlaneData() {
+      $http.get('http://localhost:5000',{"msg":"hi"}).success(function(data){
+        console.log(data);
+      });
     }
 
 
@@ -78,11 +86,11 @@
 
       }
 
-      //Find plane data https://planefinder.net/
+      //Find plane data http://flightaware.com/live/flight/#flightnumber
 
       vm.lat = 100;
 
-      console.log(displayedPlanes);
+      //console.log(displayedPlanes);
       vm.planeData = displayedPlanes;
 
     }
