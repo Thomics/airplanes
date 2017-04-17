@@ -5,9 +5,9 @@
     .module('airport')
     .controller('AirportController', AirportController);
 
-  AirportController.$inject = ['AirportService'];
+  AirportController.$inject = ['AirportService', '$interval'];
 
-  function AirportController(AirportService) {
+  function AirportController(AirportService, $interval) {
 
     var vm = this;
 
@@ -22,12 +22,16 @@
 
     function activate() {
 
-      vm.getPlanes();
+      $interval(function() {
+        console.log('aip');
+        vm.getPlanes();
+      }, 5000);
 
     }
 
 
     function getPlanes() {
+      console.log('in');
 
       AirportService.getPlanes()
         .success(function(data) {
@@ -54,6 +58,7 @@
 
           var mph = Math.floor(Number(data.states[i][9]) / 0.44704);
           var altitude = Math.floor(Number(data.states[i][7]) * 3.28084);
+          var verticalRate = Math.floor(Number(data.states[i][11]) * 3.28084);
 
           var planes = {
             lat: data.states[i][5],
@@ -62,7 +67,7 @@
             callsign: data.states[i][1],
             velocity: mph,
             altitude: altitude,
-            verticalRate: data.states[i][11],
+            verticalRate: verticalRate,
             icao24: data.states[i][0]
           };
 
