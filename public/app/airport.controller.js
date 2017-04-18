@@ -51,7 +51,9 @@
 
     function getPlaneData() {
       $http.get('http://localhost:5000',{"msg":"hi"}).success(function(data){
+
         console.log(data);
+
       });
     }
 

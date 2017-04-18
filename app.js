@@ -40,11 +40,28 @@ request('https://opensky-network.org/api/states/all', function (error, response,
 
 
 
-app.get('/', function(request, response) {
-  console.log(request.params.msg);
+app.get('/scrape', function(req, response) {
 
-  request('http://flightaware.com/live/flight/VRD752', function(error, response, body) {
-    console.log(body);
+  request('http://thomasconto.com/#/', function(error, response, body) {
+    //console.log(body);
+
+    console.log('scraped');
+
+    if(!error) {
+
+      console.log('it is in');
+
+      //Next, we'll utilize the cheerio library on the returned html which will essentially give us jQuery functionality
+      var $ = cheerio.load(body);
+
+
+      var txt = $('.about-container').html();
+
+      console.log(txt);
+
+    }
+
+
   });
 });
 
