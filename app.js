@@ -29,7 +29,7 @@ request('https://opensky-network.org/api/states/all', function (error, response,
   //console.log(json);
 
 
-  fs.writeFile('public/airplane.json', JSON.stringify(json, null, 4), function(err){
+  fs.writeFile('public/data/airplane.json', JSON.stringify(json, null, 4), function(err){
 
     console.log('File written');
 
@@ -40,32 +40,9 @@ request('https://opensky-network.org/api/states/all', function (error, response,
 
 
 
-app.get('/scrape', function(req, response) {
-
-  request('http://thomasconto.com/#/', function(error, response, body) {
-    //console.log(body);
-
-    console.log('scraped');
-
-    if(!error) {
-
-      console.log('it is in');
-
-      //Next, we'll utilize the cheerio library on the returned html which will essentially give us jQuery functionality
-      var $ = cheerio.load(body);
-
-
-      var txt = $('.about-container').html();
-
-      console.log(txt);
-
-    }
-
-
-  });
-});
 
 
 server.listen(port, function(){
   console.log('Server on port:' + port);
 });
+

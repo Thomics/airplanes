@@ -13,7 +13,6 @@
 
     vm.getPlanes = getPlanes;
     vm.planeData;
-    vm.getPlaneData = getPlaneData;
     vm.planes;
 
 
@@ -26,7 +25,6 @@
       //$interval(function() {
       //  console.log('aip');
         vm.getPlanes();
-        vm.getPlaneData();
       //}, 5000);
 
     }
@@ -49,14 +47,6 @@
     }
 
 
-    function getPlaneData() {
-      $http.get('http://localhost:5000',{"msg":"hi"}).success(function(data){
-
-        console.log(data);
-
-      });
-    }
-
 
     function displayPlanes(data) {
       var displayedPlanes = [];
@@ -64,7 +54,7 @@
 
       for(var i = 0; i < data.states.length; i++) {
 
-        if ( (data.states[i][6] > 47.5 && data.states[i][6] < 47.82) && (data.states[i][5] < -122 && data.states[i][5] > -122.55) ) {
+        if ( (data.states[i][6] > -47.5 && data.states[i][6] < 947.82) && (data.states[i][5] < -122 && data.states[i][5] > -122.55) ) {
 
           var mph = Math.floor(Number(data.states[i][9]) / 0.44704);
           var altitude = Math.floor(Number(data.states[i][7]) * 3.28084);

@@ -17,7 +17,7 @@
 
     function getPlanes() {
 
-      return $http.get('../airplane.json');
+      return $http.get('../data/airplane.json');
 
     }
 
