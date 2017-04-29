@@ -68,7 +68,8 @@
             velocity: mph,
             altitude: altitude,
             verticalRate: verticalRate,
-            icao24: data.states[i][0]
+            icao24: data.states[i][0],
+            heading: data.states[i][10]
           };
 
           displayedPlanes.push(planes);

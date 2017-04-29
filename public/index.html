@@ -13,13 +13,12 @@
   <div class="plane-container" ng-repeat="plane in airport.planeData">
     <p class="callsign">Callsign: {{plane.callsign}}</p>
     <div class="info-container">
-      <br />
       <p class="country">Origin: {{plane.country}}</p>
-      <br />
       <p class="speed">Speed: {{plane.velocity}} mph</p>
       <p class="altitude">Altitude: {{plane.altitude}} feet</p>
       <p class="icao24">ICAO24: {{plane.icao24}}</p>
-      <p class="vertical-rate">Vertical Rate: {{plane.verticalRate}} Feet/Second</p>
+      <p class="vertical-rate">Vertical Rate: {{plane.verticalRate}} F/S</p>
+      <p class="heading">Heading: {{plane.heading}}</p>
 
     </div>
 

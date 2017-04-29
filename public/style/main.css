@@ -18,10 +18,14 @@ html, body {
 }
 
 .info-container {
-  width: 100%;
-  height: 250px;
+  width: calc(50% - 40px);
+  border: 1px dashed #555;
+  font-size: 24px;
+  height: 170px;
+  margin: 34px 0 41px 0;
   float: left;
-  padding: 0 0 0 10px;
+  padding: 20px;
+  color: #555;
 }
 
 .callsign {
@@ -33,7 +37,6 @@ html, body {
 }
 
 .country {
-  font-size: 36px;
   display: inline;
   color: #555;
 }
