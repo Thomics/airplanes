@@ -59,6 +59,7 @@
           var mph = Math.floor(Number(data.states[i][9]) / 0.44704);
           var altitude = Math.floor(Number(data.states[i][7]) * 3.28084);
           var verticalRate = Math.floor(Number(data.states[i][11]) * 3.28084);
+          var direction = getDirection(Number(data.states[i][10]));
 
           var planes = {
             lat: data.states[i][5],
@@ -69,7 +70,7 @@
             altitude: altitude,
             verticalRate: verticalRate,
             icao24: data.states[i][0],
-            heading: data.states[i][10]
+            direction: direction
           };
 
           displayedPlanes.push(planes);
@@ -86,6 +87,29 @@
       //console.log(displayedPlanes);
       vm.planeData = displayedPlanes;
 
+    }
+
+
+    function getDirection(deg) {
+      if (deg >= 30 && deg <= 60) {
+        return 'North-East';
+      } else if (deg > 60 && deg < 120) {
+        return 'East';
+      } else if (deg >= 120 && deg <= 150) {
+        return 'South-East'
+      } else if (deg > 150 && deg < 210) {
+        return 'South';
+      } else if (deg >= 210 && deg <= 240) {
+        return 'South-West';
+      } else if (deg > 240 && deg < 300) {
+        return 'West';
+      } else if (deg >= 300 && deg <= 330) {
+        return 'North-West';
+      } else if (deg > 330 || deg < 30) {
+        return 'North';
+      } else {
+        return 'N/A';
+      }
     }
 
 

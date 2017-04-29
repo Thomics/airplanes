@@ -12,13 +12,24 @@
 <section class="container" ng-controller="AirportController as airport">
   <div class="plane-container" ng-repeat="plane in airport.planeData">
     <p class="callsign">Callsign: {{plane.callsign}}</p>
+
+    <div class="info-container">
+      <p class="country">Origin: {{plane.country}}</p>
+      <p class="speed">Speed: {{plane.velocity}} mph</p>
+      <p class="altitude">Altitude: {{plane.altitude}} feet</p>
+      <p class="icao24">ICAO24: {{plane.icao24}}</p>
+      <p class="vertical-rate">Vertical Rate: {{plane.verticalRate}}f/s</p>
+      <p class="direction">Heading: {{plane.direction}}</p>
+
+    </div>
+
     <div class="info-container">
       <p class="country">Origin: {{plane.country}}</p>
       <p class="speed">Speed: {{plane.velocity}} mph</p>
       <p class="altitude">Altitude: {{plane.altitude}} feet</p>
       <p class="icao24">ICAO24: {{plane.icao24}}</p>
       <p class="vertical-rate">Vertical Rate: {{plane.verticalRate}} F/S</p>
-      <p class="heading">Heading: {{plane.heading}}</p>
+      <p class="direction">Direction: {{plane.direction}}</p>
 
     </div>
 
