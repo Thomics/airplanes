@@ -10,6 +10,13 @@
 <body ng-app="airport">
 
 <section class="container" ng-controller="AirportController as airport">
+
+  <section class="header">
+
+    <airport-location></airport-location>
+
+  </section>
+
   <div class="plane-container" ng-repeat="plane in airport.planeData">
     <p class="callsign">Callsign: {{plane.callsign}}</p>
 
@@ -20,7 +27,6 @@
       <p class="icao24">ICAO24: {{plane.icao24}}</p>
       <p class="vertical-rate">Vertical Rate: {{plane.verticalRate}}f/s</p>
       <p class="direction">Heading: {{plane.direction}}</p>
-
     </div>
 
     <div class="info-container">
@@ -39,7 +45,6 @@
       <p><span class="lat-long-label">LAT:</span><span class="latitude">{{plane.lat}}</span>
         <span class="lat-long-label">LONG:</span><span class="longitude">{{plane.long}}</span>
       </p>
-      <!--<p class="longitude"><span class="lat-long-label">LONG:</span>{{plane.long}} </p>-->
     </div>
   </div>
 </section>
@@ -51,6 +56,7 @@
 
 <script src="app/app.js"></script>
 <script src="app/services/airport.service.js"></script>
+<script src="app/location/location.js"></script>
 <script src="app/airport.controller.js"></script>
 
 

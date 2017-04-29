@@ -1,0 +1,8 @@
+<form ng-submit="display.searchBook(newBook)" autocomplete="off">
+  <input class="zip" [ng-value="{{zip}}"] placeholder="Zip Code" ng-model="zip" name="zip">
+  <input class="radius" [ng-value="{{radius}}"] placeholder="Radius (Miles)" ng-model="radius" name="radius">
+
+  <button class="zip-btn" type="submit" title="Zip Code" onSubmit="this.reset();">
+    <i>Submit</i>
+  </button>
+</form>
