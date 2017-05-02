@@ -21,25 +21,19 @@
     <p class="callsign">Callsign: {{plane.callsign}}</p>
 
     <div class="info-container">
-      <p class="country">Origin: {{plane.country}}</p>
-      <p class="speed">Speed: {{plane.velocity}} mph</p>
-      <p class="altitude">Altitude: {{plane.altitude}} feet</p>
-      <p class="icao24">ICAO24: {{plane.icao24}}</p>
-      <p class="vertical-rate">Vertical Rate: {{plane.verticalRate}}f/s</p>
-      <p class="direction">Heading: {{plane.direction}}</p>
+
+      <div class="left-info-container">
+        <p class="country">Origin: {{plane.country}}</p>
+        <p class="direction">Heading: {{plane.direction}}</p>
+      </div>
+
+      <div class="right-info-container">
+        <p class="speed">Speed: {{plane.velocity}} mph</p>
+        <p class="altitude">Altitude: {{plane.altitude}} feet</p>
+        <p class="vertical-rate">Vertical Rate: {{plane.verticalRate}}f/s</p>
+      </div>
+
     </div>
-
-    <!--<div class="info-container">-->
-      <!--<p class="country">Origin: {{plane.country}}</p>-->
-      <!--<p class="speed">Speed: {{plane.velocity}} mph</p>-->
-      <!--<p class="altitude">Altitude: {{plane.altitude}} feet</p>-->
-      <!--<p class="icao24">ICAO24: {{plane.icao24}}</p>-->
-      <!--<p class="vertical-rate">Vertical Rate: {{plane.verticalRate}} F/S</p>-->
-      <!--<p class="direction">Direction: {{plane.direction}}</p>-->
-
-    <!--</div>-->
-
-    <!--<hr style="width: 98%; border: 1px solid #444444; margin-left: 4px;" />-->
 
     <div class="lat-long-container">
       <p><span class="lat-long-label">LAT:</span><span class="latitude">{{plane.lat}}</span>
@@ -53,6 +47,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+
 
 <script src="app/app.js"></script>
 <script src="app/services/airport.service.js"></script>

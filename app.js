@@ -15,8 +15,7 @@ app.use(parser.urlencoded({ extended: true }));
 app.use(parser.json());
 
 
-var port = 5000;
-
+var port = process.env.PORT || 5000;
 
 //Sets the default path the be the public folder.
 app.use(express.static(path.join(__dirname, '/public')));
@@ -31,6 +30,9 @@ request('https://opensky-network.org/api/states/all', function (error, response,
 
   fs.writeFile('public/data/airplane.json', JSON.stringify(json, null, 4), function(err){
 
+    if (err) {
+      console.log(err);
+    }
     console.log('File written');
 
   });
