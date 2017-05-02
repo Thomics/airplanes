@@ -54,7 +54,7 @@
 
       for(var i = 0; i < data.states.length; i++) {
 
-        if ( (data.states[i][6] > -47.5 && data.states[i][6] < 947.82) && (data.states[i][5] < -122 && data.states[i][5] > -122.55) ) {
+        if ( (data.states[i][6] > -947.5 && data.states[i][6] < 947.82) && (data.states[i][5] < -122 && data.states[i][5] > -122.55) ) {
 
           var mph = Math.floor(Number(data.states[i][9]) / 0.44704);
           var altitude = Math.floor(Number(data.states[i][7]) * 3.28084);
@@ -90,6 +90,13 @@
     }
 
 
+    function calculateUserData(data) {
+
+
+
+    }
+
+
     function getDirection(deg) {
       if (deg >= 30 && deg <= 60) {
         return 'North-East';
@@ -111,6 +118,8 @@
         return 'N/A';
       }
     }
+
+
 
 
   }

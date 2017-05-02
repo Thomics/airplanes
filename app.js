@@ -41,7 +41,6 @@ request('https://opensky-network.org/api/states/all', function (error, response,
 
 
 
-
 server.listen(port, function(){
   console.log('Server on port:' + port);
 });
