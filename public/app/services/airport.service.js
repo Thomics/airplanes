@@ -13,11 +13,19 @@
     var vm = this;
 
     vm.getPlanes = getPlanes;
+    vm.getZipInfo = getZipInfo;
+
 
 
     function getPlanes() {
 
       return $http.get('../data/airplane.json');
+
+    }
+
+    function getZipInfo() {
+
+      return $http.get('/zip', {'zip' : 98133});
 
     }
 

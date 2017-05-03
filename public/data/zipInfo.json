@@ -1,0 +1,27 @@
+{
+    "zip_code": "98133",
+    "lat": 47.740505,
+    "lng": -122.3431,
+    "city": "Seattle",
+    "state": "WA",
+    "timezone": {
+        "timezone_identifier": "America/Los_Angeles",
+        "timezone_abbr": "PDT",
+        "utc_offset_sec": -25200,
+        "is_dst": "T"
+    },
+    "acceptable_city_names": [
+        {
+            "city": "Bitter Lake",
+            "state": "WA"
+        },
+        {
+            "city": "Richmond Highlands",
+            "state": "WA"
+        },
+        {
+            "city": "Shoreline",
+            "state": "WA"
+        }
+    ]
+}

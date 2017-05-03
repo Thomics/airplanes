@@ -3,17 +3,31 @@
 
   angular
     .module('airport')
-    .controller('AirportController', AirportController);
+    .controller('ZipController', ZipController);
 
-  AirportController.$inject = [];
+  ZipController.$inject = ['AirportService', '$location'];
 
-  function AirportController() {
+  function ZipController(AirportService, $location) {
 
     var vm = this;
 
+    vm.getZipInfo = getZipInfo;
     vm.radiusOptions = [];
 
 
+
+    function getZipInfo() {
+
+      console.log('hi');
+      AirportService.getZipInfo()
+        .success(function(data) {
+          console.log(data);
+
+        }).error(function(err) {
+          console.log(err);
+
+        });
+    }
 
     function createRadiusOptions(size) {
       size = size || 2;

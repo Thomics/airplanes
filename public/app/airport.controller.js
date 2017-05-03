@@ -30,6 +30,8 @@
     }
 
 
+
+
     function getPlanes() {
 
       AirportService.getPlanes()
@@ -45,6 +47,8 @@
         });
 
     }
+
+
 
 
 
@@ -65,11 +69,10 @@
             lat: data.states[i][5],
             long: data.states[i][6],
             country: data.states[i][2],
-            callsign: data.states[i][1],
+            callsign: data.states[i][1] || 'NONE',
             velocity: mph,
             altitude: altitude,
             verticalRate: verticalRate,
-            icao24: data.states[i][0],
             direction: direction
           };
 

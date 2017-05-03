@@ -41,6 +41,33 @@ request('https://opensky-network.org/api/states/all', function (error, response,
 });
 
 
+app.get('/zip', function(req, res) {
+
+  console.log(req.body.params);
+
+
+  console.log('in zip');
+  request('https://www.zipcodeapi.com/rest/t6iMOqBUYrkSGbuFwSegmdNy5LgjER18XjUMKwHIY2BEd5kJYzZlNNTSyacd1dmZ/info.json/98133/degrees', function (error, response, body) {
+
+    var json = JSON.parse(body);
+
+
+    fs.writeFile('public/data/zipInfo.json', JSON.stringify(json, null, 4), function(err) {
+
+      if (err) {
+        console.log(err);
+      }
+      console.log('Zip written');
+
+    });
+
+
+  });
+
+});
+
+
+
 
 
 server.listen(port, function(){
