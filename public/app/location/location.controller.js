@@ -12,14 +12,21 @@
     var vm = this;
 
     vm.getZipInfo = getZipInfo;
+    vm.zipInfo = 98133;
     vm.radiusOptions = [];
 
 
 
-    function getZipInfo() {
+    function getZipInfo(zip) {
 
-      console.log('hi');
-      AirportService.getZipInfo()
+      vm.zipInfo = zip;
+
+      console.log(zip);
+
+
+      $location.url('/zip');
+
+      AirportService.getZipInfo(vm.zipInfo)
         .success(function(data) {
           console.log(data);
 

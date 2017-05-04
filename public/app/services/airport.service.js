@@ -23,9 +23,9 @@
 
     }
 
-    function getZipInfo() {
+    function getZipInfo(zip) {
 
-      return $http.get('/zip', {'zip' : 98133});
+      return $http.get('/zip', {params : {'zip' : zip} });
 
     }
 

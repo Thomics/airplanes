@@ -11,6 +11,6 @@ angular.module('airport')
     return {
       templateUrl: 'app/location/location.html',
       controller: 'ZipController',
-      controllerAs: 'zip'
+      controllerAs: 'zipCtrl'
     };
   });
