@@ -51,10 +51,6 @@ app.get('/zip', function(req, res) {
 });
 
 
-
-
-
-
 server.listen(port, function(){
   console.log('Server on port:' + port);
 });

@@ -14,6 +14,8 @@
     vm.getPlanes = getPlanes;
     vm.planeData;
     vm.planes;
+    vm.locationLat = AirportService.lat;
+    vm.locationLong = AirportService.long;
 
 
     vm.lat = 0;
@@ -38,9 +40,7 @@
         .success(function(data) {
 
           vm.planeData = data;
-          //console.log(vm.planeData);
 
-          //getZipFile();
           displayPlanes(data);
 
         }).error(function(err){
@@ -50,37 +50,33 @@
     }
 
 
-    //function getZipFile() {
-    //
-    //  AirportService.getZipFile()
-    //    .success(function(data) {
-    //
-    //      console.log(data);
-    //
-    //      //vm.planeData = data;
-    //      //console.log(vm.planeData);
-    //
-    //      //displayPlanes(data);
-    //
-    //    }).error(function(err){
-    //      console.log(err);
-    //    });
-    //
-    //}
-
-
-
 
     function displayPlanes(data) {
 
       var displayedPlanes = [];
 
-      console.log(AirportService.zip);
+      var zip = AirportService.zip;
+      var radius = Number(AirportService.radius  * 0.013766);
+
+      console.log(AirportService.radius);
 
 
       for(var i = 0; i < data.states.length; i++) {
 
-        if ( (data.states[i][6] > -947.5 && data.states[i][6] < 947.82) && (data.states[i][5] < -122 && data.states[i][5] > -122.55) ) {
+        var planeLat = data.states[i][5];
+        var planeLong = data.states[i][6];
+
+
+        //If the plane is within the longitude and latitude based on the radius selected by the user,
+        //we will display the planes information.
+
+        console.log(radius);
+        console.log(planeLat);
+        console.log(planeLong);
+
+
+        if ( (vm.locationLong > (planeLong - radius) && planeLong < (planeLong + radius) )
+               && (planeLat < (vm.locationLat - radius) && planeLat > (vm.locationLat - radius) ) ) {
 
           var mph = Math.floor(Number(data.states[i][9]) / 0.44704);
           var altitude = Math.floor(Number(data.states[i][7]) * 3.28084);
@@ -88,14 +84,16 @@
           var direction = getDirection(Number(data.states[i][10]));
 
           var planes = {
-            lat: data.states[i][5],
-            long: data.states[i][6],
+
+            lat: lat,
+            long: long,
             country: data.states[i][2],
             callsign: data.states[i][1] || 'NONE',
             velocity: mph,
             altitude: altitude,
             verticalRate: verticalRate,
             direction: direction
+
           };
 
           displayedPlanes.push(planes);
@@ -109,7 +107,7 @@
 
       vm.lat = 100;
 
-      //console.log(displayedPlanes);
+      console.log(displayedPlanes);
       vm.planeData = displayedPlanes;
 
     }

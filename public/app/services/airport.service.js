@@ -13,9 +13,10 @@
     var vm = this;
 
     vm.getPlanes = getPlanes;
-    vm.getZipInfo = getZipInfo;
-    vm.getZipFile = getZipFile;
+    vm.getLocationInfo = getLocationInfo;
     vm.zip = 98133;
+    vm.lat;
+    vm.long;
 
 
 
@@ -26,25 +27,9 @@
     }
 
 
-    //function getPlanes() {
-    //
-    //  return $http.get('../data/airplane.json');
-    //
-    //}
+    function getLocationInfo() {
 
-    function getZipInfo(zip) {
-
-      vm.zip = zip || 98133;
-
-      console.log(vm.zip);
-
-      return $http.get('/zip', {params : {'zip' : zip} });
-
-    }
-
-    function getZipFile() {
-
-      return $http.get('../data/zipInfo.json');
+      return $http.get('/zip');
 
     }
 

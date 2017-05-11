@@ -11,30 +11,41 @@
 
     var vm = this;
 
-    vm.getZipInfo = getZipInfo;
+    vm.getLocationInfo = getLocationInfo;
     vm.zipInfo = 98133;
-    vm.radiusOptions = [];
+    vm.radius = 1;
 
 
 
-    function getZipInfo(zip) {
 
-      vm.zipInfo = zip;
+    function getLocationInfo(zip, radius) {
+
+      vm.zipInfo = zip || 98133;
+      vm.radius = radius || 1;
 
       console.log(zip);
+      console.log(radius);
 
 
-      $location.url('/zip');
-
-      AirportService.getZipInfo(vm.zipInfo)
+      AirportService.getLocationInfo()
         .success(function(data) {
+
+          if ( isNaN(data.lat) ) {
+            console.log('Zip Broke!');
+          }
+
+          AirportService.lat = data.lat;
+          AirportService.long = data.long;
+
+
           console.log(data);
 
         }).error(function(err) {
           console.log(err);
-
         });
+
     }
+
 
     function createRadiusOptions(size) {
       size = size || 2;
