@@ -46,10 +46,13 @@ app.get('/zip', function(req, res) {
   console.log(req);
   console.log(req.query.zip);
 
+  //User submitted zip or default to Seattle
+  var zip = req.query.zip || 98133;
+  var url = 'https://www.zipcodeapi.com/rest/UaYRNQn2XahZfTEnzulneqX6P3fl4xsYHrQvidxfoPfDJT1iomFDNCJCGYYLvrJd/info.json/' + zip + '/degrees';
 
   console.log('in zip');
 
-  request('https://www.zipcodeapi.com/rest/t6iMOqBUYrkSGbuFwSegmdNy5LgjER18XjUMKwHIY2BEd5kJYzZlNNTSyacd1dmZ/info.json/98133/degrees', function (error, response, body) {
+  request(url, function (error, response, body) {
 
     var json = JSON.parse(body);
 

@@ -40,7 +40,27 @@
           vm.planeData = data;
           //console.log(vm.planeData);
 
+          getZipFile();
           displayPlanes(data);
+
+        }).error(function(err){
+          console.log(err);
+        });
+
+    }
+
+
+    function getZipFile() {
+
+      AirportService.getZipFile()
+        .success(function(data) {
+
+          console.log(data);
+
+          //vm.planeData = data;
+          //console.log(vm.planeData);
+
+          //displayPlanes(data);
 
         }).error(function(err){
           console.log(err);
@@ -51,9 +71,11 @@
 
 
 
-
     function displayPlanes(data) {
+
       var displayedPlanes = [];
+
+      console.log(AirportService.zip);
 
 
       for(var i = 0; i < data.states.length; i++) {

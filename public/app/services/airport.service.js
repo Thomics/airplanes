@@ -14,6 +14,8 @@
 
     vm.getPlanes = getPlanes;
     vm.getZipInfo = getZipInfo;
+    vm.getZipFile = getZipFile;
+    vm.zip = 98133;
 
 
 
@@ -25,7 +27,17 @@
 
     function getZipInfo(zip) {
 
+      vm.zip = zip || 98133;
+
+      console.log(vm.zip);
+
       return $http.get('/zip', {params : {'zip' : zip} });
+
+    }
+
+    function getZipFile() {
+
+      return $http.get('../data/zipInfo.json');
 
     }
 
