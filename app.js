@@ -21,55 +21,35 @@ var port = process.env.PORT || 5000;
 app.use(express.static(path.join(__dirname, '/public')));
 
 
-request('https://opensky-network.org/api/states/all', function (error, response, body) {
+app.get('/home', function(req, res) {
 
-  var json = JSON.parse(body);
+  request('https://opensky-network.org/api/states/all', function (error, response, body) {
 
-  //console.log(json);
+    var json = JSON.parse(body);
 
-
-  fs.writeFile('public/data/airplane.json', JSON.stringify(json, null, 4), function(err){
-
-    if (err) {
-      console.log(err);
-    }
-    console.log('File written');
+    return res.json(json);
 
   });
-
 
 });
 
 
 app.get('/zip', function(req, res) {
 
-  console.log(req);
-  console.log(req.query.zip);
-
-  //User submitted zip or default to Seattle
   var zip = req.query.zip || 98133;
   var url = 'https://www.zipcodeapi.com/rest/UaYRNQn2XahZfTEnzulneqX6P3fl4xsYHrQvidxfoPfDJT1iomFDNCJCGYYLvrJd/info.json/' + zip + '/degrees';
 
-  console.log('in zip');
 
   request(url, function (error, response, body) {
 
     var json = JSON.parse(body);
 
-
-    fs.writeFile('public/data/zipInfo.json', JSON.stringify(json, null, 4), function(err) {
-
-      if (err) {
-        console.log(err);
-      }
-      console.log('Zip written');
-
-    });
-
+    return res.json(json);
 
   });
 
 });
+
 
 
 

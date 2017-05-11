@@ -21,9 +21,16 @@
 
     function getPlanes() {
 
-      return $http.get('../data/airplane.json');
+      return $http.get('/home');
 
     }
+
+
+    //function getPlanes() {
+    //
+    //  return $http.get('../data/airplane.json');
+    //
+    //}
 
     function getZipInfo(zip) {
 

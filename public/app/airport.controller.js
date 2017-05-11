@@ -40,7 +40,7 @@
           vm.planeData = data;
           //console.log(vm.planeData);
 
-          getZipFile();
+          //getZipFile();
           displayPlanes(data);
 
         }).error(function(err){
@@ -50,23 +50,23 @@
     }
 
 
-    function getZipFile() {
-
-      AirportService.getZipFile()
-        .success(function(data) {
-
-          console.log(data);
-
-          //vm.planeData = data;
-          //console.log(vm.planeData);
-
-          //displayPlanes(data);
-
-        }).error(function(err){
-          console.log(err);
-        });
-
-    }
+    //function getZipFile() {
+    //
+    //  AirportService.getZipFile()
+    //    .success(function(data) {
+    //
+    //      console.log(data);
+    //
+    //      //vm.planeData = data;
+    //      //console.log(vm.planeData);
+    //
+    //      //displayPlanes(data);
+    //
+    //    }).error(function(err){
+    //      console.log(err);
+    //    });
+    //
+    //}
 
 
 
