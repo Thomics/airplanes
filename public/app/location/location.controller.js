@@ -5,9 +5,9 @@
     .module('airport')
     .controller('ZipController', ZipController);
 
-  ZipController.$inject = ['AirportService', '$location'];
+  ZipController.$inject = ['AirportService'];
 
-  function ZipController(AirportService, $location) {
+  function ZipController(AirportService) {
 
     var vm = this;
 
@@ -21,10 +21,9 @@
     function getLocationInfo(zip, radius) {
 
       vm.zipInfo = zip || 98133;
-      vm.radius = radius || 1;
+      console.log(vm.zipInfo);
+      vm.radius = Number(radius) || 1;
 
-      console.log(zip);
-      console.log(radius);
 
 
       AirportService.getLocationInfo()
@@ -38,25 +37,14 @@
           AirportService.long = data.long;
 
 
-          console.log(data);
+
+          DisplayPlaneService.displayPlanes(DisplayPlaneService.planeData);
 
         }).error(function(err) {
           console.log(err);
         });
 
     }
-
-
-    function createRadiusOptions(size) {
-      size = size || 2;
-      var radius = [];
-      for (var i = 1; i < size; i++) {
-        radius.push(i);
-      }
-      return radius;
-
-    }
-
 
   }
 

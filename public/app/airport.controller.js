@@ -12,25 +12,17 @@
     var vm = this;
 
     vm.getPlanes = getPlanes;
-    vm.planeData;
-    vm.planes;
     vm.locationLat = AirportService.lat;
     vm.locationLong = AirportService.long;
 
-
-    vm.lat = 0;
 
     activate();
 
     function activate() {
 
-      //$interval(function() {
-      //  console.log('aip');
         vm.getPlanes();
-      //}, 5000);
 
     }
-
 
 
 
@@ -39,15 +31,16 @@
       AirportService.getPlanes()
         .success(function(data) {
 
-          vm.planeData = data;
+          DisplayPlaneService.planeData = data;
 
-          displayPlanes(data);
+          DisplayPlaneService.displayPlanes(data);
 
         }).error(function(err){
           console.log(err);
         });
 
     }
+
 
 
 
@@ -85,8 +78,8 @@
 
           var planes = {
 
-            lat: lat,
-            long: long,
+            lat: planeLat,
+            long: planeLong,
             country: data.states[i][2],
             callsign: data.states[i][1] || 'NONE',
             velocity: mph,
@@ -103,19 +96,8 @@
 
       }
 
-      //Find plane data http://flightaware.com/live/flight/#flightnumber
-
-      vm.lat = 100;
-
       console.log(displayedPlanes);
       vm.planeData = displayedPlanes;
-
-    }
-
-
-    function calculateUserData(data) {
-
-
 
     }
 
@@ -141,8 +123,6 @@
         return 'N/A';
       }
     }
-
-
 
 
   }
