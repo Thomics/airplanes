@@ -14,10 +14,6 @@
 
     vm.getPlanes = getPlanes;
     vm.getLocationInfo = getLocationInfo;
-    vm.zip = 98133;
-    vm.lat = 47.755653;
-    vm.long = -122.341515;
-    vm.planeData;
 
 
 
@@ -28,9 +24,15 @@
     }
 
 
-    function getLocationInfo() {
+    function getLocationInfo(zip) {
 
-      return $http.get('/zip');
+      var config = {
+        params: {
+          zip: zip
+        }
+      };
+
+      return $http.get('/zip', config);
 
     }
 

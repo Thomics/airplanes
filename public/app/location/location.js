@@ -10,7 +10,7 @@ angular.module('airport')
   .directive('airportLocation', function(){
     return {
       templateUrl: 'app/location/location.html',
-      controller: 'ZipController',
-      controllerAs: 'zipCtrl'
+      controller: 'AirportController',
+      controllerAs: 'airportCtrl'
     };
   });
