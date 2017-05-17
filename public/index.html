@@ -17,6 +17,7 @@
 
   </section>
 
+  <p>{{airport.zip}}</p>
   <div class="plane-container" ng-repeat="plane in airport.planeData">
     <p class="callsign">Callsign: {{plane.callsign}}</p>
 
@@ -47,14 +48,14 @@
 
 <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>-->
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-route.js"></script>
+
 
 
 <script src="app/app.js"></script>
-<script src="app/services/airport.service.js"></script>
-<!--<script src="app/services/displayPlanes.service.js"></script>-->
 <script src="app/airport.controller.js"></script>
+<script src="app/services/airport.service.js"></script>
 <script src="app/location/location.js"></script>
-<!--<script src="app/location/location.controller.js"></script>-->
 
 
 </body>

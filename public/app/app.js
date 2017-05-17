@@ -1,2 +1,2 @@
 
-angular.module('airport', []);
+angular.module('airport', ['ngRoute']);
