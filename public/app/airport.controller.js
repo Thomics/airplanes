@@ -11,14 +11,18 @@
 
     var vm = this;
 
-    vm.planeData = [];
+    vm.planeData;
     vm.displayPlanes = displayPlanes;
     vm.getPlanes = getPlanes;
     vm.getLocationInfo = getLocationInfo;
     vm.radius = 1; //That is one mile in lat/long.
     vm.userLat = 47.755653; //Default value
     vm.userLong = -122.341515; //Default value
-    vm.zip = 98133;
+    vm.zipInfo = 98133;
+
+
+    vm.firstname = 'tom';
+    vm.lastname = 'conto';
 
 
     activate();
@@ -102,14 +106,16 @@
     }
 
 
-    function getLocationInfo(zip, radius) {
+    function getLocationInfo() {
 
-      console.log(zip);
+      console.log('Get location info');
 
-      vm.zip = zip;
-      vm.radius = Number(radius *  0.013766) || 0.013766;
+      //console.log(zip);
+      //
+      //vm.zipInfo = zip;
+      //vm.radius = Number(radius *  0.013766) || 0.013766;
 
-      AirportService.getLocationInfo(zip)
+      AirportService.getLocationInfo(vm.zip)
         .success(function(data) {
 
 
@@ -125,7 +131,6 @@
           vm.userLong = Number(data.lng);
 
           vm.getPlanes();
-          $scope.$apply();
 
         }).error(function(err) {
           console.log(err);
