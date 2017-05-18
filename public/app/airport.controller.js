@@ -20,6 +20,9 @@
     vm.userLong = -122.341515; //Default value
     vm.zipInfo = 98133;
 
+    vm.zipPlaceholder = 'Zip Code';
+    vm.radiusPlaceholder = 'Radius (Miles)';
+
 
     vm.firstname = 'tom';
     vm.lastname = 'conto';
@@ -97,8 +100,6 @@
         }
 
       }
-
-      displayedPlanes.push({lat:100, long:100, country: 'usa', callsign: 'hi', velocity: 'velocity', altitude:100, verticalRate:100, direction: 'n'});
 
       console.log(displayedPlanes);
       vm.planeData = displayedPlanes;
