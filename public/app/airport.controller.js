@@ -20,13 +20,6 @@
     vm.userLong = -122.341515; //Default value
     vm.zipInfo = 98133;
 
-    vm.zipPlaceholder = 'Zip Code';
-    vm.radiusPlaceholder = 'Radius (Miles)';
-
-
-    vm.firstname = 'tom';
-    vm.lastname = 'conto';
-
 
     activate();
 
@@ -101,22 +94,22 @@
 
       }
 
+      displayedPlanes.push({lat:100, long:100, country: 'usa', callsign: 'hi', velocity: 'velocity', altitude:100, verticalRate:100, direction: 'n'});
+
       console.log(displayedPlanes);
       vm.planeData = displayedPlanes;
 
     }
 
 
-    function getLocationInfo() {
+    function getLocationInfo(zip, radius) {
 
-      console.log('Get location info');
+      console.log(zip);
 
-      //console.log(zip);
-      //
-      //vm.zipInfo = zip;
-      //vm.radius = Number(radius *  0.013766) || 0.013766;
+      vm.zipInfo = zip;
+      vm.radius = Number(radius *  0.013766) || 0.013766;
 
-      AirportService.getLocationInfo(vm.zip)
+      AirportService.getLocationInfo(zip)
         .success(function(data) {
 
 

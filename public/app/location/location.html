@@ -1,25 +1,9 @@
-<form ng-submit="air.getLocationInfo(zipInfo, radius)" autocomplete="off">
-  Your Zip <input class="zip"   ng-model="air.zipInfo" placeholder="Zip Code" name="zipCode">
+<form ng-submit="air.getLocationInfo(air.zipInfo, air.radius)" autocomplete="off">
+  <input class="zip" placeholder="Zip Code" ng-model="air.zipInfo" name="zipCode">
 
-  Radius (Miles) <input class="radius" id="radius" placeholder="air.userLat" ng-model="air.radius" name="radius">
+  <input class="radius" placeholder="Radius (Miles)" ng-model="air.radius" name="radius">
 
   <button class="zip-btn" type="submit" title="Zip Code" onSubmit="this.reset();">
     <i>Submit</i>
   </button>
 </form>
-
-<!--<form ng-submit="register.onSubmit()" ng-controller="RegisterController as register">-->
-  <!--<div class="registration-input-box">-->
-    <!--&lt;!&ndash;<label for="name">Full name</label>&ndash;&gt;-->
-    <!--<input type="text"id="name" placeholder="Full name" ng-model="register.credentials.name">-->
-  <!--</div>-->
-  <!--<div class="registration-input-box">-->
-    <!--&lt;!&ndash;<label for="email">Email address</label>&ndash;&gt;-->
-    <!--<input type="email" id="email" placeholder="Email" ng-model="register.credentials.email">-->
-  <!--</div>-->
-  <!--<div class="registration-input-box">-->
-    <!--&lt;!&ndash;<label for="password">Password</label>&ndash;&gt;-->
-    <!--<input type="password" id="password" placeholder="Password" ng-model="register.credentials.password">-->
-  <!--</div>-->
-  <!--<button type="submit" class="registration-submit-button">Sign up for free</button>-->
-<!--</form>-->
