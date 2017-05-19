@@ -37,6 +37,7 @@ app.get('/home', function(req, res) {
 app.get('/zip', function(req, res) {
 
   var zip = req.query.zip || 98133;
+
   var url = 'https://www.zipcodeapi.com/rest/UaYRNQn2XahZfTEnzulneqX6P3fl4xsYHrQvidxfoPfDJT1iomFDNCJCGYYLvrJd/info.json/' + zip + '/degrees';
 
 
