@@ -21,6 +21,8 @@
 
   </section>
 
+  <div class="unsearched-bg" ng-hide="air.planeData.length > 0">Search the Skies Above</div>
+
   <div class="plane-container" ng-repeat="plane in air.planeData">
     <p class="callsign">Callsign: {{plane.callsign}}</p>
 
@@ -47,6 +49,11 @@
     </div>
   </div>
 </section>
+
+<footer>
+  <p>Copyright 2017 Thomas Conto | </p><a href="http:thomasconto.com">thomasconto.com</a>
+
+</footer>
 
 
 

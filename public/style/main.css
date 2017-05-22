@@ -1,5 +1,6 @@
 html, body {
   font-family: RobotoRegular, sans-serif;
+  background-color: #fefefe;
 }
 
 h1 {
@@ -31,6 +32,16 @@ h1 span:after {
   margin-left: 26px;
 }
 
+.unsearched-bg {
+  color: #999;
+  text-align: center;
+  margin-top: 20vh;
+  font-size: 18px;
+  font-family: RobotoRegular, sans-serif;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-weight: 300;
+}
 
 .plane-container {
   width: calc(100% - 40px);
@@ -174,3 +185,23 @@ form.location-form label {
   letter-spacing: 1px;
 }
 
+footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: #e2e2e2;
+  width: 100%;
+  text-align: right;
+  height: 27px;
+  padding: 10px 10px 0 0;
+  font-size: 14px;
+  color: #555;
+}
+
+footer p {
+  display: inline;
+}
+
+footer a {
+  color: #555;
+}
