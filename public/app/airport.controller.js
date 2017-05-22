@@ -20,6 +20,7 @@
     vm.userLat = 47.755653; //Default value
     vm.userLong = -122.341515; //Default value
     vm.zipInfo;
+    vm.loading = false;
 
 
     activate();
@@ -41,6 +42,7 @@
       AirportService.getPlanes()
         .success(function(data) {
 
+          vm.loading = true;
           vm.displayPlanes(data);
 
         }).error(function(err){
@@ -55,7 +57,6 @@
     function displayPlanes(data) {
 
       var displayedPlanes = [];
-
 
       vm.radius = Number(vm.miles) * 0.013766 || 0.013766;
       console.log(data);
@@ -96,14 +97,18 @@
       }
 
 
+      console.log(vm.loading);
+
       console.log(displayedPlanes);
       vm.planeData = displayedPlanes;
+      vm.loading = false;
 
     }
 
 
     function getLocationInfo(zip, miles) {
 
+      vm.loading = true;
       console.log(zip);
 
       vm.zipInfo = zip || 98133;
