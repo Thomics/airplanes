@@ -24,7 +24,8 @@ html, body {
 .header {
   background: #e2e2e2;
   width: 100%;
-  height: 110px;
+  height: 167px;
+
 }
 
 
@@ -78,22 +79,63 @@ html, body {
   color: #b1b1b1;
 }
 
-.zip, .radius {
-  width: 150px;
-  height: 32px;
-  font-size: 16px;
-  border: none;
-  text-align: center;
-  background: #fff;
-}
-
 .zip-btn {
-  width: 75px;
-  border: 1px solid #c7c7c7;
+  width: 40%;
+  border: 2px solid #c7c7c7;
   background: #fff;
   height: 32px;
   padding: 0;
-  margin: 0;
+  margin: 5px 0 0 0;
   font-size: 16px;
   color: #aaa;
+  float: right;
 }
+
+form {
+  width: 280px;
+  float: left;
+  margin: 20px;
+}
+
+form div {
+  position: relative;
+  overflow: hidden;
+  background: #fafafa;
+}
+
+form input {
+  width: 252px;
+  border: 2px solid gray;
+  background: none;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  padding: 8px 12px;
+  outline: 0;
+  height: 25px;
+  font-size: 18px;
+}
+
+
+form input:focus {
+  border-color: #f06d06;
+  color: #555;
+}
+
+form label {
+  position: absolute;
+  padding: 7px 6px;
+  background: #e6eff1;
+  color: #555;
+}
+
+
+form.location-form label {
+  top: 2px;
+  right: 100%;
+  width: 40%;
+  margin-right: -104%;
+  bottom: 2px;
+}
+
