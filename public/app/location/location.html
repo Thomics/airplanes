@@ -1,7 +1,7 @@
-<form ng-submit="air.getLocationInfo(air.zipInfo, air.radius)" autocomplete="off">
+<form ng-submit="air.getLocationInfo(air.zipInfo, air.miles)" autocomplete="off">
   <input type="text" class="zip" placeholder="Zip Code" ng-model="air.zipInfo" name="zipCode">
 
-  <input type="text" class="radius" placeholder="Radius (Miles)" ng-model="air.radius" name="radius">
+  <input type="text" class="radius" ng-model="air.miles" placeholder="Radius (Miles)"  name="miles">
 
   <button class="zip-btn" type="submit" title="Zip Code" onSubmit="this.reset();">
     <i>Submit</i>

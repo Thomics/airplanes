@@ -15,7 +15,8 @@
     vm.displayPlanes = displayPlanes;
     vm.getPlanes = getPlanes;
     vm.getLocationInfo = getLocationInfo;
-    vm.radius; //That is one mile in lat/long.
+    vm.radius = 0.013766; //That is one mile in lat/long.
+    vm.miles;
     vm.userLat = 47.755653; //Default value
     vm.userLong = -122.341515; //Default value
     vm.zipInfo;
@@ -56,7 +57,7 @@
       var displayedPlanes = [];
 
 
-      vm.radius = vm.radius || 1;
+      vm.radius = Number(vm.miles) * 0.013766 || 0.013766;
       console.log(data);
       console.log(vm.radius);
 
@@ -101,12 +102,12 @@
     }
 
 
-    function getLocationInfo(zip, radius) {
+    function getLocationInfo(zip, miles) {
 
       console.log(zip);
 
       vm.zipInfo = zip || 98133;
-      vm.radius = Number(radius *  0.013766) || 0.013766;
+      vm.radius = Number(miles *  0.013766) || 0.013766;
 
       AirportService.getLocationInfo(zip)
         .success(function(data) {
