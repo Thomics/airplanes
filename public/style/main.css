@@ -1,6 +1,7 @@
 html, body {
   font-family: RobotoRegular, sans-serif;
   background-color: #fefefe;
+
 }
 
 h1 {
@@ -133,8 +134,7 @@ h1 span:after {
 }
 
 form {
-  width: 58%;
-  /*float: left;*/
+  width: 100%;
   margin: 20px auto;
 }
 
@@ -142,14 +142,16 @@ form div {
   position: relative;
   overflow: hidden;
   background: #fafafa;
-  width: 280px;
+  width: 36%;
   float: left;
   margin: 0 0 0 15px;
+  border: 2px solid #838383;
+
 }
 
 form input {
-  width: 252px;
-  border: 2px solid #838383;
+  width: 90%;
+  border: none;
   background: none;
   position: relative;
   top: 0;
@@ -177,12 +179,14 @@ form label {
 
 
 form.location-form label {
-  top: 2px;
+  top: -8px;
   right: 100%;
   width: 40%;
   margin-right: -100%;
-  bottom: 2px;
+  bottom: 0;
   letter-spacing: 1px;
+  font-size: 100%;
+  text-align: center;
 }
 
 footer {
@@ -224,7 +228,7 @@ input[type=number]::-webkit-outer-spin-button {
 /*Loading Spinner*/
 
 .loader {
-  color: #515151;
+  color: #8c8a8a;
   font-size: 90px;
   text-indent: -9999em;
   overflow: hidden;
@@ -302,4 +306,14 @@ input[type=number]::-webkit-outer-spin-button {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
+}
+
+
+
+
+.form-container {
+  display: block;
+  text-align: center;
+  width: 60%;
+  margin: 0 auto;
 }

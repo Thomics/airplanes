@@ -1,14 +1,16 @@
-<form class="location-form" ng-submit="air.getLocationInfo(air.zipInfo, air.miles)" autocomplete="off">
-  <div>
-    <input type="number" class="zip-form"  ng-model="air.zipInfo" id="zipCode" name="zipCode" min="1" max="99999">
-    <label for="zipCode"> Zip Code </label>
-  </div>
+<section class="form-container">
+  <form class="location-form" ng-submit="air.getLocationInfo(air.zipInfo, air.miles)" autocomplete="off">
+    <div>
+      <input type="number" class="zip-form"  ng-model="air.zipInfo" id="zipCode" name="zipCode" min="1" max="99999">
+      <label for="zipCode"> Zip Code </label>
+    </div>
 
-  <div>
-    <input type="number" class="radius-form" ng-model="air.miles" id="miles" name="miles" min="1" max="9999">
-    <label for="miles">Radius (Miles) </label>
-  </div>
-  <button class="zip-btn" type="submit" title="Zip Code" onSubmit="this.reset();">
-    <i>Submit</i>
-  </button>
-</form>
+    <div>
+      <input type="number" class="radius-form" ng-model="air.miles" id="miles" name="miles" min="1" max="9999">
+      <label for="miles">Radius (Miles) </label>
+    </div>
+    <button class="zip-btn" type="submit" title="Zip Code" onSubmit="this.reset();">
+      <i>Submit</i>
+    </button>
+  </form>
+</section>
