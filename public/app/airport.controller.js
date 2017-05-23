@@ -11,16 +11,16 @@
 
     var vm = this;
 
-    vm.planeData;
     vm.displayPlanes = displayPlanes;
-    vm.getPlanes = getPlanes;
     vm.getLocationInfo = getLocationInfo;
-    vm.radius = 0.013766; //That is one mile in lat/long.
+    vm.getPlanes = getPlanes;
+    vm.loading = false;
     vm.miles;
+    vm.planeData;
+    vm.radius = 0.013766; //That is one mile in lat/long.
     vm.userLat = 47.755653; //Default value
     vm.userLong = -122.341515; //Default value
     vm.zipInfo;
-    vm.loading = false;
 
 
     activate();

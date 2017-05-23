@@ -18,6 +18,12 @@ html, body {
   width: 100%;
 }
 
+  @media screen and (max-width: 624px) {
+  .header {
+    height: 185px;
+  }
+}
+
 
 .title {
   color: #555;
@@ -28,6 +34,12 @@ html, body {
   padding-top: 10px;
   text-align: center;
   text-transform: uppercase;
+}
+
+  @media screen and (max-width: 624px) {
+  .title {
+    font-size: 32px;
+  }
 }
 
 
@@ -140,6 +152,21 @@ html, body {
   opacity: .5;
   margin-top: 25px;
 }
+
+
+
+  @media screen and (max-width: 900px) {
+  .airplane-icon {
+    width: 16%;
+  }
+}
+
+  @media screen and (max-width: 624px) {
+  .airplane-icon {
+    width: 24%;
+  }
+}
+
 
 .unsearched-bg {
   color: #999;
