@@ -5,6 +5,8 @@
   <title>Airport</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,700" rel="stylesheet">
   <link rel="stylesheet" href="style/reset.css">
+  <link rel="stylesheet" href="style/loader.css">
+  <link rel="stylesheet" href="style/locationForm.css">
   <link rel="stylesheet" href="style/main.css">
 </head>
 
@@ -14,7 +16,7 @@
 
 
   <section class="header">
-    <h1><span>Eye on the Sky</span></h1>
+    <h1 class="title"><span>Eye on the Sky</span></h1>
 
 
     <airport-location></airport-location>
@@ -49,7 +51,9 @@
     </div>
 
     <div class="lat-long-container">
-      <p><span class="lat-long-label">LAT:</span><span class="latitude">{{plane.lat}}</span>
+      <p>
+        <span class="lat-long-label">LAT:</span><span class="latitude">{{plane.lat}}</span>
+        <br />
         <span class="lat-long-label">LONG:</span><span class="longitude">{{plane.long}}</span>
       </p>
     </div>
@@ -57,7 +61,7 @@
 
   <div class="loader" ng-show="air.loading">Loading...</div>
 
-  <footer ng-hide="air.planeData.length > 0">
+  <footer class="copyright-container" ng-hide="air.planeData.length > 0">
     <p>Copyright 2017 Thomas Conto | </p><a href="http:thomasconto.com" target="_blank">thomasconto.com</a>
 
   </footer>

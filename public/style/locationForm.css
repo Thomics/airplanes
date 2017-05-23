@@ -1,0 +1,91 @@
+/****Styling for the Location.html form.****/
+/* Author: Thomas Conto */
+/* Date Created: 5/22/17 */
+/* Date Last Edited: 5/22/17 */
+
+
+.form-container {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  width: 60%;
+}
+
+/*Submit Button*/
+.zip-btn {
+  background: #fff;
+  border: 2px solid #838383;
+  color: #555;
+  font-size: 16px;
+  height: 45px;
+  margin: 0 0 0 15px;
+  padding: 8px 12px;
+  width: 16%;
+}
+
+
+.location-form {
+  margin: 20px auto;
+  width: 100%;
+}
+
+
+.location-form div {
+  background: #fafafa;
+  border: 2px solid #838383;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  margin: 0 0 0 15px;
+  width: 36%;
+}
+
+
+.location-form input {
+  background: none;
+  border: none;
+  font-size: 18px;
+  height: 25px;
+  left: 0;
+  outline: 0;
+  position: relative;
+  padding: 8px 12px;
+  top: 0;
+  width: 90%;
+  z-index: 1;
+}
+
+
+.location-form input:focus {
+  border-color: #f06d06;
+  color: #555;
+}
+
+
+.location-form label {
+  background: #e6eff1;
+  color: #555;
+  padding: 12px 20px 12px 17px;
+  position: absolute;
+  text-align: right;
+}
+
+
+form.location-form label {
+  bottom: 0;
+  font-size: 100%;
+  letter-spacing: 1px;
+  margin-right: -100%;
+  right: 100%;
+  text-align: center;
+  top: -8px;
+  width: 40%;
+}
+
+
+/*Eliminates the number scroll arrows in the form input.*/
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
