@@ -97,11 +97,38 @@ html, body {
   width: calc(50% - 20px);
 }
 
+  @media screen and (max-width: 1050px) {
+  .info-container {
+    float: right;
+    font-size: 3vw;
+    margin-top: -45px;
+  }
+}
+
 
 .left-info-container, .right-info-container {
   width: 50%;
   float: left;
 }
+
+  @media screen and (max-width: 1050px) {
+  .left-info-container {
+    clear: both;
+    float: right;
+    text-align: right;
+    width: 100%;
+  }
+}
+
+  @media screen and (max-width: 1050px) {
+  .right-info-container {
+    clear: both;
+    float: right;
+    text-align: right;
+    width: 100%;
+  }
+}
+
 
 
 .callsign {
@@ -112,6 +139,12 @@ html, body {
   text-align: left;
   text-transform: uppercase;
   width: 100%;
+}
+
+  @media screen and (max-width: 1050px) {
+  .callsign {
+    font-size: 5vw;
+  }
 }
 
 
@@ -129,6 +162,13 @@ html, body {
   width: calc(47% - 20px);
 }
 
+  @media screen and (max-width: 1050px) {
+  .lat-long-container {
+    float: left;
+    margin-top: 0;
+  }
+}
+
 
 .latitude, .longitude {
   color: #555;
@@ -136,11 +176,23 @@ html, body {
   margin: 0px 0px 0 5px;
 }
 
+@media screen and (max-width: 1200px) {
+  .latitude, .longitude {
+    font-size: 4.2vw;
+  }
+}
+
 
 .lat-long-label {
   color: #b1b1b1;
-  font-size: 72px;
+  font-size: 5.5vw;
   font-weight: 700;
+}
+
+  @media screen and (max-width: 1200px) {
+  .lat-long-label {
+    font-size: 5vw;
+  }
 }
 /*End styling for the plane location information.*/
 
