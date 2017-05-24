@@ -8,6 +8,7 @@ var cheerio = require('cheerio');
 
 
 
+
 // Use app to use body parser for JSON.
 var app = express();
 var server = require('http').createServer(app);
@@ -50,6 +51,38 @@ app.get('/zip', function(req, res) {
   });
 
 });
+
+app.get('/planeData', function(req, res) {
+
+  var url = 'https://planefinder.net/data/flight/VIR10K';
+
+  request(url, function(error, response, body) {
+
+    var $ = cheerio.load(body);
+
+    var planeData = {
+      planeArr: []
+    };
+
+
+    $('.table-responsive tr').each(function(i, elem) {
+
+      var text = $(this).text();
+
+      text = text.replace(/\W+/g, " ");
+
+      console.log(text);
+      planeData.planeArr.push(text);
+    });
+
+    res.send(planeData);
+
+
+  });
+
+
+});
+
 
 
 server.listen(port, function(){

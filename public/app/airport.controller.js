@@ -14,6 +14,7 @@
     vm.displayPlanes = displayPlanes;
     vm.getLocationInfo = getLocationInfo;
     vm.getPlanes = getPlanes;
+    vm.getPlaneData = getPlaneData;
     vm.loading = false;
     vm.miles;
     vm.planeData;
@@ -33,6 +34,7 @@
 
         vm.getPlanes();
 
+        vm.getPlaneData();
     }
 
 
@@ -44,6 +46,19 @@
 
           vm.loading = true;
           vm.displayPlanes(data);
+
+        }).error(function(err){
+          console.log(err);
+        });
+
+    }
+
+    function getPlaneData() {
+
+      AirportService.getPlaneData()
+        .success(function(data) {
+
+          console.log(data);
 
         }).error(function(err){
           console.log(err);

@@ -13,9 +13,8 @@
     var vm = this;
 
     vm.getPlanes = getPlanes;
+    vm.getPlaneData = getPlaneData;
     vm.getLocationInfo = getLocationInfo;
-    vm.reloadRoute = reloadRoute;
-
 
 
     function getPlanes() {
@@ -38,11 +37,14 @@
     }
 
 
-    function reloadRoute() {
-      setTimeout(function(){
-        $route.reload();
-      }, 300);
+    function getPlaneData() {
+
+      return $http.get('/planeData');
+
     }
+
+
+
 
 
   }
