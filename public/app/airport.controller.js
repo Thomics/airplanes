@@ -58,7 +58,24 @@
       AirportService.getPlaneData()
         .success(function(data) {
 
-          console.log(data);
+          var planeArr = data.planeArr;
+          console.log(planeArr);
+
+          var title = planeArr[0];
+          var airData = planeArr[1].split(' ');
+
+          var aircraft = airData.slice(1,3).join(' ');
+          var airline = airData.slice(3,airData.length - 4).join(' ');
+          var time = airData.slice(airData.length - 4, airData.length - 1).join(' ');
+
+          airData = planeArr[3].split(' ');
+
+          var seatIndex = airData.indexOf('Seats');
+
+          var serviceType = airData.slice(1, seatIndex).join(' ');
+
+          var seats = airData.slice(seatIndex, seatIndex + 2).join(' ');
+
 
         }).error(function(err){
           console.log(err);
