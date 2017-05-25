@@ -31,11 +31,12 @@
 
   </div>
 
-  <div class="plane-container" ng-repeat="plane in air.planeData">
+  <!--<div class="plane-container" ng-repeat="plane in air.planeData">-->
     <p class="callsign">Callsign: {{plane.callsign}}</p>
 
     <div class="info-container">
 
+      <p class="destination">{{plane.destination}}</p>
       <div class="left-info-container">
         <p class="country">Origin: {{plane.country}}</p>
         <p class="direction">Heading: {{plane.direction}}</p>

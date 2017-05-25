@@ -55,52 +55,37 @@
     }
 
 
+    //Scrape PlaneFinder for more information about the flight.
     function getPlaneData(callsign) {
 
       AirportService.getPlaneData(callsign)
         .success(function(data) {
 
-          var planeArr = data.planeArr;
 
-          var title = planeArr[0];
+          //Takes the array of strings returned from scraping planefinder and extracts the relevant information.
+          var planeArr = data.planeArr;
+          var destination = planeArr[0];
           var airData = planeArr[1].split(' ');
           var aircraft = airData.slice(1,3).join(' ');
           var airline = airData.slice(3,airData.length - 4).join(' ');
           var time = airData.slice(airData.length - 4, airData.length - 1).join(' ');
-
           airData = planeArr[3].split(' ');
-
           var seatIndex = airData.indexOf('Seats');
           var serviceType = airData.slice(1, seatIndex).join(' ');
           var seats = airData.slice(seatIndex, seatIndex + 2).join(' ');
 
-          //var planeObject = {
-          //  title: title,
-          //  aircraft: aircraft,
-          //  airline: airline,
-          //  time: time,
-          //  serviceType: serviceType,
-          //  seats: seats
-          //};
 
-
+          //Find the object from the planedata associated with the callsign, add the fields to the object.
           vm.planeData.filter(function( obj ) {
-
             if (obj.callsign === callsign) {
-              obj.title = title;
+              obj.destination = destination;
               obj.aircraft = aircraft;
               obj.airline = airline;
               obj.time = time;
               obj.serviceType = serviceType;
               obj.seats = seats;
             }
-
-            return obj.callsign === callsign;
           });
-
-          console.log(vm.planeData);
-
-          //return planeObject;
 
         }).error(function(err){
           console.log(err);
@@ -147,17 +132,9 @@
             direction: direction
           };
 
-          var planeData = getPlaneData(planes.callsign);
-          //vm.getPlaneData(planes.callsign).then(function(data) {
-          //  console.log(data);
-          //});
-
-
-
-          //console.log(planeData);
-
 
           displayedPlanes.push(planes);
+          getPlaneData(planes.callsign);
 
 
 
