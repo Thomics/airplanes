@@ -37,9 +37,15 @@
     }
 
 
-    function getPlaneData() {
+    function getPlaneData(callsigns) {
 
-      return $http.get('/planeData');
+      var config = {
+        params: {
+          callsigns: callsigns
+        }
+      };
+
+      return $http.get('/planeData', config);
 
     }
 

@@ -54,7 +54,9 @@ app.get('/zip', function(req, res) {
 
 app.get('/planeData', function(req, res) {
 
-  var url = 'https://planefinder.net/data/flight/VIR10K';
+  var callsign = req.query.callsigns || 'VIR10K';
+
+  var url = 'https://planefinder.net/data/flight/' + callsign;
 
   request(url, function(error, response, body) {
 
