@@ -70,12 +70,7 @@
           var destination = planeArr[0];
           var airData = planeArr[1].split(' ');
 
-          var airInd = airData.indexOf('Airline');
-          var journeyInd = airData.indexOf('Journey');
-
-
-
-          var aircraft = airData.slice(1,3).join(' ');
+          var aircraft = airData.slice(airData.indexOf('Aircraft'),airData.indexOf('Airline')).join(' ');
 
           var airline = airData.slice(airData.indexOf('Airline'),airData.indexOf('Journey')).join(' ');
           var time = airData.slice(airData.length - 4, airData.length - 1).join(' ');
