@@ -73,7 +73,7 @@ html, body {
   border-bottom: 1px solid #888;
   float: left;
   height: 180px;
-  padding: 20px;
+  padding: 0 20px 10px 20px;
   width: calc(100% - 40px);
 }
 
@@ -134,8 +134,9 @@ html, body {
 .callsign {
   background: rgba(230, 239, 242, 0.4);
   color: #555;
-  font-size: 52px;
+  font-size: 36px;
   margin-top: 25px;
+  padding: 10px 5px;
   text-align: left;
   text-transform: uppercase;
   width: 100%;
@@ -157,7 +158,6 @@ html, body {
 .lat-long-container {
   float: right;
   height: 150px;
-  margin-top: -59px;
   text-align: left;
   width: calc(47% - 20px);
 }

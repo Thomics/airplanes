@@ -71,9 +71,8 @@ app.get('/planeData', function(req, res) {
 
       var text = $(this).text();
 
-      text = text.replace(/\W+/g, " ");
+      text = text.replace(/\r?\n|\r/g, " ");
 
-      console.log(text);
       planeData.planeArr.push(text);
     });
 

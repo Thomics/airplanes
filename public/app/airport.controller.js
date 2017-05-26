@@ -61,13 +61,23 @@
       AirportService.getPlaneData(callsign)
         .success(function(data) {
 
+          console.log(data);
+
+
 
           //Takes the array of strings returned from scraping planefinder and extracts the relevant information.
           var planeArr = data.planeArr;
           var destination = planeArr[0];
           var airData = planeArr[1].split(' ');
+
+          var airInd = airData.indexOf('Airline');
+          var journeyInd = airData.indexOf('Journey');
+
+
+
           var aircraft = airData.slice(1,3).join(' ');
-          var airline = airData.slice(3,airData.length - 4).join(' ');
+
+          var airline = airData.slice(airData.indexOf('Airline'),airData.indexOf('Journey')).join(' ');
           var time = airData.slice(airData.length - 4, airData.length - 1).join(' ');
           airData = planeArr[3].split(' ');
           var seatIndex = airData.indexOf('Seats');
