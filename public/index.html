@@ -31,39 +31,65 @@
 
   </div>
 
+
   <div class="plane-container" ng-repeat="plane in air.planeData">
     <p class="destination">{{plane.destination}}</p>
-    <!--Callsign: {{plane.callsign}}-->
+
     <div class="info-container">
+      <p class="flight-time"><span>Flight Time:</span><br />{{plane.time}}</p>
+      <hr />
+      <p class="flight-time"><span>Airline:</span><br />{{plane.airline}}</p>
+      <hr />
+      <p class="speed"><span>Speed:</span><br />{{plane.velocity}} MPH</p>
+      <hr />
+      <p class="speed"><span>Altitude:</span><br />{{plane.altitude}}'</p>
+      <hr />
 
-      <p class="callsign">{{plane.callsign}}</p>
-      <div class="left-info-container">
-        <p class="country">Origin: {{plane.country}}</p>
-        <p class="direction">Heading: {{plane.direction}}</p>
-        <p class="zip-location" ng-hide="zipInfo !== null">Zip {{plane.zipInfo}}</p>
-      </div>
+      <!--<div class="left-info-container">-->
+        <!--<p class="flight-time">{{plane.airline}}</p>-->
+        <!--<p class="flight-time">Callsign: {{plane.callsign}}</p>-->
+        <!--<p class="flight-time">Origin: {{plane.country}}</p>-->
+        <!--<p class="direction">Heading: {{plane.direction}}</p>-->
+      <!--</div>-->
 
-      <div class="right-info-container">
-        <p class="speed">Speed: {{plane.velocity}} mph</p>
-        <p class="altitude">Altitude: {{plane.altitude}} feet</p>
-        <p class="vertical-rate">Vertical Rate: {{plane.verticalRate}}f/s</p>
-        <p class="">{{plane.aircraft}}</p>
-        <p class="">{{plane.airline}}</p>
-        <p class="">{{plane.seats}}</p>
-        <p class="">{{plane.serviceType}}</p>
-        <p class="">{{plane.time}}</p>
-      </div>
+      <!--<div class="left-info-container">-->
+        <!--<p class="">{{plane.aircraft}}</p>-->
+        <!--<p class="">{{plane.seats}}</p>-->
+        <!--<p class="">{{plane.serviceType}}</p>-->
+        <!--&lt;!&ndash;<p class="flight-time"><span>Flight Time:</span><br /> {{plane.time}}</p>&ndash;&gt;-->
+      <!--</div>-->
+
+      <!--<div class="left-info-container">-->
+        <!--<p class="">{{plane.lat}}</p>-->
+        <!--<p class="">{{plane.long}}</p>-->
+        <!--<p class="">Altitude: {{plane.altitude}}</p>-->
+        <!--<p class="">Speed: {{plane.velocity}}</p>-->
+        <!--<p class="">Vertical Rate: {{plane.verticalRate}}f/s</p>-->
+      <!--</div>-->
+
+      <!--<div class="right-info-container">-->
+        <!--<p class="speed">Speed: {{plane.velocity}} mph</p>-->
+        <!--<p class="altitude">Altitude: {{plane.altitude}} feet</p>-->
+        <!--<p class="vertical-rate">Vertical Rate: {{plane.verticalRate}}f/s</p>-->
+        <!--<p class="">{{plane.aircraft}}</p>-->
+        <!--<p class="">{{plane.airline}}</p>-->
+        <!--<p class="">{{plane.seats}}</p>-->
+        <!--<p class="">{{plane.serviceType}}</p>-->
+        <!--<p class="">{{plane.time}}</p>-->
+      <!--</div>-->
 
     </div>
+
 
     <div class="lat-long-container">
       <p>
         <span class="lat-long-label">LAT:</span><span class="latitude">{{plane.lat}}</span>
-        <br />
         <span class="lat-long-label">LONG:</span><span class="longitude">{{plane.long}}</span>
       </p>
     </div>
   </div>
+
+
 
   <div class="loader" ng-show="air.loading">Loading...</div>
 
@@ -91,3 +117,41 @@
 
 </body>
 </html>
+
+
+
+
+
+<!--<div class="plane-container" ng-repeat="plane in air.planeData">-->
+  <!--<p class="destination">{{plane.destination}}</p>-->
+  <!--&lt;!&ndash;Callsign: {{plane.callsign}}&ndash;&gt;-->
+  <!--<div class="info-container">-->
+
+    <!--<p class="callsign">{{plane.callsign}}</p>-->
+    <!--<div class="left-info-container">-->
+      <!--<p class="country">Origin: {{plane.country}}</p>-->
+      <!--<p class="direction">Heading: {{plane.direction}}</p>-->
+      <!--<p class="zip-location" ng-hide="zipInfo !== null">Zip {{plane.zipInfo}}</p>-->
+    <!--</div>-->
+
+    <!--<div class="right-info-container">-->
+      <!--<p class="speed">Speed: {{plane.velocity}} mph</p>-->
+      <!--<p class="altitude">Altitude: {{plane.altitude}} feet</p>-->
+      <!--<p class="vertical-rate">Vertical Rate: {{plane.verticalRate}}f/s</p>-->
+      <!--<p class="">{{plane.aircraft}}</p>-->
+      <!--<p class="">{{plane.airline}}</p>-->
+      <!--<p class="">{{plane.seats}}</p>-->
+      <!--<p class="">{{plane.serviceType}}</p>-->
+      <!--<p class="">{{plane.time}}</p>-->
+    <!--</div>-->
+
+  <!--</div>-->
+
+  <!--<div class="lat-long-container">-->
+    <!--<p>-->
+      <!--<span class="lat-long-label">LAT:</span><span class="latitude">{{plane.lat}}</span>-->
+      <!--<br />-->
+      <!--<span class="lat-long-label">LONG:</span><span class="longitude">{{plane.long}}</span>-->
+    <!--</p>-->
+  <!--</div>-->
+<!--</div>-->

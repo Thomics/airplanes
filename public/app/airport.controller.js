@@ -72,8 +72,8 @@
 
           var aircraft = airData.slice(airData.indexOf('Aircraft'),airData.indexOf('Airline')).join(' ');
 
-          var airline = airData.slice(airData.indexOf('Airline'),airData.indexOf('Journey')).join(' ');
-          var time = airData.slice(airData.length - 4, airData.length - 1).join(' ');
+          var airline = airData.slice(airData.indexOf('Airline')+1,airData.indexOf('Journey')).join(' ');
+          var time = airData.slice(airData.length - 3, airData.length - 1).join(' ');
           airData = planeArr[3].split(' ');
           var seatIndex = airData.indexOf('Seats');
           var serviceType = airData.slice(1, seatIndex).join(' ');

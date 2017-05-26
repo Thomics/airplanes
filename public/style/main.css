@@ -72,7 +72,7 @@ html, body {
   background: #fafafa url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAGklEQVQYV2M8c+bMfxMTE0YGBgYGMAEDKBwAkAEEBADdNBMAAAAASUVORK5CYII=);
   border-bottom: 1px solid #888;
   float: left;
-  height: 180px;
+  height: 500px;
   padding: 0 20px 10px 20px;
   width: calc(100% - 40px);
 }
@@ -105,6 +105,11 @@ html, body {
   }
 }
 
+.info-container hr {
+  float: left;
+  margin: 5px 0 0 0;
+  width: 75px;
+}
 
 .left-info-container, .right-info-container {
   width: 50%;
@@ -155,11 +160,43 @@ html, body {
 }
 
 
+
+.flight-time {
+  clear: both;
+  color: #535353;
+  font-size: 40px;
+  text-transform: uppercase;
+}
+
+.flight-time span {
+  font-size: 32px;
+  text-transform: uppercase;
+  font-weight: 300;
+  color: #999;
+  letter-spacing: 4px;
+}
+
+.speed {
+  clear: both;
+  color: #535353;
+  font-size: 40px;
+  text-transform: uppercase;
+}
+
+.speed span {
+  font-size: 32px;
+  text-transform: uppercase;
+  font-weight: 300;
+  color: #999;
+  letter-spacing: 4px;
+}
+
 .lat-long-container {
-  float: right;
+  float: left;
   height: 150px;
+  padding-top: 10px;
   text-align: left;
-  width: calc(47% - 20px);
+  width: 100%;
 }
 
   @media screen and (max-width: 1050px) {
@@ -173,7 +210,7 @@ html, body {
 .latitude, .longitude {
   color: #555;
   font-size: 64px;
-  margin: 0px 0px 0 5px;
+  margin: 0px 40px 0 5px;
 }
 
 @media screen and (max-width: 1200px) {
