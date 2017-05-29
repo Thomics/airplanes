@@ -72,8 +72,7 @@ html, body {
   background: #fafafa url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAGklEQVQYV2M8c+bMfxMTE0YGBgYGMAEDKBwAkAEEBADdNBMAAAAASUVORK5CYII=);
   border-bottom: 1px solid #888;
   float: left;
-  height: 500px;
-  padding: 0 20px 10px 20px;
+  padding: 0 20px 20px 20px;
   width: calc(100% - 40px);
 }
 
@@ -89,51 +88,43 @@ html, body {
 
 
 /*Plane location information container*/
-.info-container {
+.left-info-container, .middle-info-container, .right-info-container {
   color: #555;
   float: left;
   font-size: 24px;
   margin-top: 5px;
-  width: calc(50% - 20px);
+  width: calc(30% - 10px);
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+
+.left-info-container {
+  width: 40%;
+  padding-left: 0;
 }
 
   @media screen and (max-width: 1050px) {
-  .info-container {
+  .left-info-container {
     float: right;
     font-size: 3vw;
     margin-top: -45px;
   }
 }
 
-.info-container hr {
+.left-info-container hr, .middle-info-container hr, .right-info-container hr {
   float: left;
   margin: 5px 0 0 0;
   width: 75px;
 }
 
-.left-info-container, .right-info-container {
-  width: 50%;
+.container-divider {
+  width: 1px;
+  background: #ccc;
+  height: 225px;
   float: left;
+  margin-left: -50px;
+  margin-top: 25px;
 }
-
-  @media screen and (max-width: 1050px) {
-  .left-info-container {
-    clear: both;
-    float: right;
-    text-align: right;
-    width: 100%;
-  }
-}
-
-  @media screen and (max-width: 1050px) {
-  .right-info-container {
-    clear: both;
-    float: right;
-    text-align: right;
-    width: 100%;
-  }
-}
-
 
 
 .destination {
@@ -161,14 +152,14 @@ html, body {
 
 
 
-.flight-time {
+.plane-info {
   clear: both;
   color: #535353;
   font-size: 40px;
   text-transform: uppercase;
 }
 
-.flight-time span {
+.plane-info span {
   font-size: 32px;
   text-transform: uppercase;
   font-weight: 300;
@@ -176,25 +167,10 @@ html, body {
   letter-spacing: 4px;
 }
 
-.speed {
-  clear: both;
-  color: #535353;
-  font-size: 40px;
-  text-transform: uppercase;
-}
-
-.speed span {
-  font-size: 32px;
-  text-transform: uppercase;
-  font-weight: 300;
-  color: #999;
-  letter-spacing: 4px;
-}
 
 .lat-long-container {
   float: left;
-  height: 150px;
-  padding-top: 10px;
+  margin-top: 10px;
   text-align: left;
   width: 100%;
 }

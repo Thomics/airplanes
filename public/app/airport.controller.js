@@ -70,14 +70,13 @@
           var destination = planeArr[0];
           var airData = planeArr[1].split(' ');
 
-          var aircraft = airData.slice(airData.indexOf('Aircraft'),airData.indexOf('Airline')).join(' ');
+          var aircraft = airData.slice(airData.indexOf('Aircraft') + 1,airData.indexOf('Airline')).join(' ');
 
           var airline = airData.slice(airData.indexOf('Airline')+1,airData.indexOf('Journey')).join(' ');
           var time = airData.slice(airData.length - 3, airData.length - 1).join(' ');
           airData = planeArr[3].split(' ');
-          var seatIndex = airData.indexOf('Seats');
-          var serviceType = airData.slice(1, seatIndex).join(' ');
-          var seats = airData.slice(seatIndex, seatIndex + 2).join(' ');
+          var serviceType = airData.slice(1, airData.indexOf('Seats')).join(' ');
+          var seats = airData.slice(airData.indexOf('Seats')+1, airData.indexOf('Seats') + 2).join(' ');
 
 
           //Find the object from the planedata associated with the callsign, add the fields to the object.
