@@ -42,6 +42,12 @@ html, body {
   }
 }
 
+  @media screen and (max-width: 500px) {
+  .title {
+    font-size: 24px;
+  }
+}
+
 
 /*Styling for the lines before and after the title.*/
 .title span:before, .title span:after {
@@ -54,11 +60,24 @@ html, body {
   width: 75px;
 }
 
+  @media screen and (max-width: 500px) {
+  .title span:before, .title span:after {
+    width: 50px;
+    top: 18px;
+  }
+}
+
 
 .title span:before {
   margin-left: -100px;
 }
 
+
+  @media screen and (max-width: 500px) {
+  .title span:before {
+    margin-left: -75px;
+  }
+}
 
 .title span:after {
   margin-left: 26px;
@@ -103,13 +122,18 @@ html, body {
   padding-left: 0;
 }
 
-  @media screen and (max-width: 1050px) {
+  @media screen and (max-width: 800px) {
   .left-info-container {
-    float: right;
-    font-size: 3vw;
-    margin-top: -45px;
+    width: 38%;
   }
 }
+
+  @media screen and (min-width: 1800px) {
+  .left-info-container {
+    width: 33%;
+  }
+}
+
 
 .left-info-container hr, .middle-info-container hr, .right-info-container hr {
   float: left;
@@ -126,6 +150,12 @@ html, body {
   margin-top: 25px;
 }
 
+@media screen and (max-width: 800px) {
+  .container-divider {
+    height: 150px;
+    margin-left: -30px;
+  }
+}
 
 .destination {
   background: rgba(230, 239, 242, 0.4);
@@ -138,12 +168,17 @@ html, body {
   width: 100%;
 }
 
-  @media screen and (max-width: 1050px) {
+  @media screen and (max-width: 800px) {
   .destination {
-    font-size: 5vw;
+    font-size: 32px;
   }
 }
 
+  @media screen and (max-width: 500px) {
+  .destination {
+    font-size: 18px;
+  }
+}
 
 .country {
   color: #555;
@@ -159,14 +194,51 @@ html, body {
   text-transform: uppercase;
 }
 
-.plane-info span {
-  font-size: 32px;
-  text-transform: uppercase;
-  font-weight: 300;
-  color: #999;
-  letter-spacing: 4px;
+  @media screen and (max-width: 1050px) {
+  .plane-info {
+    font-size: 30px;
+    margin-top: 15px;
+  }
 }
 
+  @media screen and (max-width: 800px) {
+  .plane-info {
+    font-size: 22px;
+    margin-top: 15px;
+  }
+}
+
+  @media screen and (max-width: 500px) {
+  .plane-info {
+    font-size: 3.1vw;
+  }
+}
+
+.plane-info span {
+  color: #999;
+  font-size: 32px;
+  font-weight: 300;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+  @media screen and (max-width: 1050px) {
+  .plane-info span{
+    font-size: 24px;
+  }
+}
+
+  @media screen and (max-width: 800px) {
+  .plane-info span{
+    font-size: 16px;
+  }
+}
+
+  @media screen and (max-width: 500px) {
+  .plane-info span{
+    font-size: 2.6vw;
+  }
+}
 
 .lat-long-container {
   float: left;
@@ -198,7 +270,7 @@ html, body {
 
 .lat-long-label {
   color: #b1b1b1;
-  font-size: 5.5vw;
+  font-size: 64px;
   font-weight: 700;
 }
 
