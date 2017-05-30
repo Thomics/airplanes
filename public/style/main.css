@@ -134,6 +134,14 @@ html, body {
   }
 }
 
+@media screen and (max-width: 500px) {
+  .left-info-container, .middle-info-container, .right-info-container {
+    width: 31%;
+  }
+}
+
+
+
 
 .left-info-container hr, .middle-info-container hr, .right-info-container hr {
   float: left;
@@ -150,10 +158,24 @@ html, body {
   margin-top: 25px;
 }
 
-@media screen and (max-width: 800px) {
+  @media screen and (max-width: 800px) {
   .container-divider {
     height: 150px;
     margin-left: -30px;
+  }
+}
+
+  @media screen and (max-width: 500px) {
+  .container-divider {
+    height: 100px;
+    margin-left: -15px;
+  }
+}
+
+  @media screen and (max-width: 500px) {
+  .container-divider {
+    height: 100px;
+    margin-left: -5px;
   }
 }
 
@@ -176,7 +198,7 @@ html, body {
 
   @media screen and (max-width: 500px) {
   .destination {
-    font-size: 18px;
+    font-size: 3.7vw;
   }
 }
 
@@ -261,9 +283,15 @@ html, body {
   margin: 0px 40px 0 5px;
 }
 
-@media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1200px) {
   .latitude, .longitude {
     font-size: 4.2vw;
+  }
+}
+
+  @media screen and (max-width: 400px) {
+  .latitude, .longitude {
+    font-size: 3.2vw;
   }
 }
 
